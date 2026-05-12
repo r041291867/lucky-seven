@@ -291,6 +291,7 @@ export default function App() {
             {isRolling ? 'ROLLING' : isTossing ? 'TOSSING' : 'READY'}
           </span>
         </header>
+        <p className="header-subtitle">提供快速抽選幸運頻道/數字</p>
 
         <div className="feature-row">
           <button
