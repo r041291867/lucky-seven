@@ -345,6 +345,35 @@
   }
 }
 
+.jiaobei-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 16px 0 4px;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.jiaobei-legend-item {
+  display: flex;
+  gap: 8px;
+}
+
+.jiaobei-legend-name {
+  flex-shrink: 0;
+  font-weight: 600;
+  color: var(--accent);
+  min-width: 2.5em;
+}
+
+.jiaobei-legend-desc {
+  color: var(--text-muted);
+}
+
 .result-number {
   font-size: 72px;
   font-weight: 700;

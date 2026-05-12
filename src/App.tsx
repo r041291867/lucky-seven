@@ -268,7 +268,9 @@ export default function App() {
                         {isRolling ? "ROLLING" : isTossing ? "TOSSING" : "READY"}
                     </span>
                 </header>
-                <p className="header-subtitle">提供快速抽選幸運頻道/數字</p>
+                <p className="header-subtitle">
+                    {page === "jiaobei" ? "請虔誠地在心中默念您的求問事項" : "提供快速抽選幸運頻道/數字"}
+                </p>
 
                 <div className="feature-row">
                     <button
@@ -514,6 +516,21 @@ export default function App() {
                                     </div>
                                 ))
                             )}
+                        </div>
+
+                        <div className="jiaobei-legend">
+                            <div className="jiaobei-legend-item">
+                                <span className="jiaobei-legend-name">聖筊</span>
+                                <span className="jiaobei-legend-desc">表示神明允許、同意，或行事會順利。又稱允筊。</span>
+                            </div>
+                            <div className="jiaobei-legend-item">
+                                <span className="jiaobei-legend-name">笑筊</span>
+                                <span className="jiaobei-legend-desc">表示神明一笑、不解，或者考慮中，行事狀況不明，可以重新再擲筊請示神明，或再次說清楚自己的祈求。</span>
+                            </div>
+                            <div className="jiaobei-legend-item">
+                                <span className="jiaobei-legend-name">陰筊</span>
+                                <span className="jiaobei-legend-desc">表示神明否定、憤怒，或者不宜行事，可以重新再擲筊請示。</span>
+                            </div>
                         </div>
 
                         <footer className="footer">

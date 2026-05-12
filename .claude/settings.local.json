@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-ChildItem \"c:\\\\Users\\\\jasontai\\\\Work\\\\lucky-seven\" | Where-Object { $_.Name -match \"lock|node_modules\" } | Select-Object Name)",
+      "PowerShell(pnpm --version)"
+    ]
+  }
+}
