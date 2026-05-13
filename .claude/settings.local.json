@@ -2,7 +2,12 @@
   "permissions": {
     "allow": [
       "PowerShell(Get-ChildItem \"c:\\\\Users\\\\jasontai\\\\Work\\\\lucky-seven\" | Where-Object { $_.Name -match \"lock|node_modules\" } | Select-Object Name)",
-      "PowerShell(pnpm --version)"
+      "PowerShell(pnpm --version)",
+      "Bash(npx tsc *)",
+      "Bash(npx vite *)",
+      "Bash(New-Item -Path \"c:\\\\Users\\\\jasontai\\\\Work\\\\lucky-seven\\\\README.md\" -ItemType File -Force)",
+      "Bash(Out-Null)",
+      "PowerShell(New-Item -Path \"c:\\\\Users\\\\jasontai\\\\Work\\\\lucky-seven\\\\README.md\" -ItemType File -Force)"
     ]
   }
 }

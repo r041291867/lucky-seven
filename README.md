@@ -1,48 +1,54 @@
-# Lucky Seven
+# Lucky Channel
 
-Lucky Seven 是一個以 React + TypeScript + Vite 製作的互動抽籤網頁，提供「抽選數字」與「擲茭」兩個功能頁面，支援動畫、音效與歷史紀錄，適合活動抽獎、課堂點名與趣味互動。
+幸運頻道 — 抽籤與擲筊工具。
 
-## 功能總覽
+A lucky number picker and jiaobei (divination) tool built with React + TypeScript + Vite.
 
-- 兩大功能頁可切換：`抽選數字` / `擲茭`
-- 深色主題介面，支援 RWD（手機/平板/桌面）
-- 支援音效開關、快捷鍵操作（`Enter` / `Space`）
+## Features
 
-## 抽選數字功能
+- **抽選數字 / Draw Number** — Pick a random number from a custom range, with optional no-repeat mode and preset ranges.
+- **線上擲筊 / Jiaobei** — Simulate the traditional Taiwanese jiaobei divination ritual.
+- Chinese / English language toggle
+- Dark / light theme toggle
+- Keyboard shortcut: `Enter` or `Space` to roll / toss
+- Responsive layout (mobile ≤ 767 px, desktop ≥ 768 px)
 
-- 可自訂起始值與結束值
-- 內建常用範圍快速套用（如 `1–20`、`1–100`）
-- 支援 `數字模式` 與 `轉盤模式`
-- 可開啟 `不重複抽取`，並提供重置抽籤池
-- 保留歷史紀錄，支援一鍵複製結果
+## Tech Stack
 
-## 擲茭功能
+- React 19 + TypeScript
+- Vite 8
+- CSS custom properties for theming (no CSS-in-JS)
+- Functional-programming domain layer (`src/domain/`)
 
-- 獨立頁面呈現，不與抽號功能混用
-- 擲茭動畫與專用音效（落地敲擊感）
-- 結果判定：`聖筊` / `笑筊` / `陰筊`
-- 保留擲茭歷史紀錄，支援清空紀錄
-
-## 技術棧
-
-- React
-- TypeScript
-- Vite
-
-## 本機啟動
+## Getting Started
 
 ```bash
-npm install
-npm run dev
+pnpm install
+pnpm dev
 ```
 
-## 建置與預覽
+Build for production:
 
 ```bash
-npm run build
-npm run preview
+pnpm build
 ```
 
-## GitHub Repository Description（可直接使用）
+## Project Structure
 
-雙模式互動抽籤網頁（React + Vite）：支援範圍抽號、轉盤、不重複抽取與擲茭動畫/音效/歷史紀錄，並完整支援 RWD。
+```
+src/
+  App.tsx          # Root component — routing, theme, i18n
+  NumberDraw.tsx   # Number picker feature
+  Jiaobei.tsx      # Jiaobei feature
+  i18n.ts          # zh / en translation strings
+  sound.ts         # Web Audio runtime
+  constants.ts     # Shared constants
+  domain/
+    draw.ts        # Pure draw / pool logic
+    jiaobei.ts     # Pure jiaobei logic
+    range.ts       # Range parsing and generation
+```
+
+## Credits
+
+Designed by Gomez

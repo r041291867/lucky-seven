@@ -26,6 +26,20 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+[data-theme="light"] {
+  --bg: #f0f0f3;
+  --surface: #ffffff;
+  --surface-elevated: #f4f4f7;
+  --border: #d4d4d8;
+  --text: #18181b;
+  --text-muted: #52525b;
+  --text-dim: #71717a;
+  --accent: #18181b;
+  --pill-active: #e4e4e7;
+  --pill-idle: #f4f4f5;
+  --danger: #dc2626;
+}
+
 *,
 *::before,
 *::after {

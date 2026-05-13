@@ -85,13 +85,6 @@ export function prepareRoll(
   return { tag: 'ready', target, nextPoolSnapshot: nextPool }
 }
 
-export function wheelTargetIndex(
-  rangeOrdered: readonly number[],
-  target: number,
-): number {
-  return rangeOrdered.indexOf(target)
-}
-
 export function poolBlocksRoll(
   noRepeat: boolean,
   pool: readonly number[] | null,
