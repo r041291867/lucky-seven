@@ -1,17 +1,12 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { ANIM_JIAOBEI_MS, HISTORY_CAP } from "./constants";
 import { prependCapped } from "./domain/draw";
-import { throwJiaobei, type JiaobeiFace, type JiaobeiOutcome } from "./domain/jiaobei";
+import { throwJiaobei } from "./domain/jiaobei";
+import { useHistory } from "./HistoryContext";
 import type { i18n } from "./i18n";
 import { createAudioRuntime, type AudioRuntime } from "./sound";
 
 type I18nDict = (typeof i18n)[keyof typeof i18n];
-
-type JiaobeiHistoryEntry = Readonly<{
-    left: JiaobeiFace;
-    right: JiaobeiFace;
-    outcome: JiaobeiOutcome;
-}>;
 
 interface Props {
     soundOn: boolean;
@@ -26,10 +21,12 @@ export function Jiaobei({ soundOn, t }: Props) {
     const audio = useStableAudio();
     const tickTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
-    const [jiaobeiLeft, setJiaobeiLeft] = useState<JiaobeiFace>("yin");
-    const [jiaobeiRight, setJiaobeiRight] = useState<JiaobeiFace>("yang");
-    const [jiaobeiResult, setJiaobeiResult] = useState<JiaobeiOutcome | null>(null);
-    const [jiaobeiHistory, setJiaobeiHistory] = useState<readonly JiaobeiHistoryEntry[]>([]);
+    const {
+        jiaobeiHistory, setJiaobeiHistory,
+        jiaobeiLeft, setJiaobeiLeft,
+        jiaobeiRight, setJiaobeiRight,
+        jiaobeiResult, setJiaobeiResult,
+    } = useHistory();
     const [isTossing, setIsTossing] = useState(false);
 
     const stopTickTimers = useCallback((): void => {

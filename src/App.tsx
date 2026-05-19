@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.css";
+import { HistoryProvider } from "./HistoryContext";
 import { i18n, type Lang, type Theme } from "./i18n";
 import { Jiaobei } from "./Jiaobei";
 import { NumberDraw } from "./NumberDraw";
@@ -68,6 +69,7 @@ export default function App() {
     const toggleTheme = (): void => setTheme((th) => (th === "dark" ? "light" : "dark"));
 
     return (
+        <HistoryProvider>
         <div className="app">
             <div className="card">
                 <header className="header">
@@ -122,5 +124,6 @@ export default function App() {
                 )}
             </div>
         </div>
+        </HistoryProvider>
     );
 }

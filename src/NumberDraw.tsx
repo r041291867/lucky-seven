@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { ANIM_NUMBER_MS, HISTORY_CAP, PRESETS } from "./constants";
 import { canRollAttempt, poolBlocksRoll, prepareRoll, prependCapped, randomIntInclusive } from "./domain/draw";
 import { boundsToRange, parseBounds } from "./domain/range";
+import { useHistory } from "./HistoryContext";
 import type { i18n } from "./i18n";
 import { createAudioRuntime, type AudioRuntime } from "./sound";
 
@@ -22,11 +23,13 @@ export function NumberDraw({ soundOn, t }: Props) {
     const copiedTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
     const resultCopiedTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-    const [startStr, setStartStr] = useState("1");
-    const [endStr, setEndStr] = useState("2000");
-    const [noRepeat, setNoRepeat] = useState(false);
-    const [history, setHistory] = useState<readonly number[]>([]);
-    const [display, setDisplay] = useState<number | null>(null);
+    const {
+        numberHistory: history, setNumberHistory: setHistory,
+        startStr, setStartStr,
+        endStr, setEndStr,
+        noRepeat, setNoRepeat,
+        display, setDisplay,
+    } = useHistory();
     const [isRolling, setIsRolling] = useState(false);
     const [copiedIdx, setCopiedIdx] = useState<number | null>(null);
     const [resultCopied, setResultCopied] = useState(false);

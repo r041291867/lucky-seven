@@ -7,7 +7,12 @@
       "Bash(npx vite *)",
       "Bash(New-Item -Path \"c:\\\\Users\\\\jasontai\\\\Work\\\\lucky-seven\\\\README.md\" -ItemType File -Force)",
       "Bash(Out-Null)",
-      "PowerShell(New-Item -Path \"c:\\\\Users\\\\jasontai\\\\Work\\\\lucky-seven\\\\README.md\" -ItemType File -Force)"
+      "PowerShell(New-Item -Path \"c:\\\\Users\\\\jasontai\\\\Work\\\\lucky-seven\\\\README.md\" -ItemType File -Force)",
+      "Bash(type nul *)",
+      "Bash(pnpm remove *)"
+    ],
+    "additionalDirectories": [
+      "c:\\Users\\jasontai\\Work\\lucky-seven\\src"
     ]
   }
 }
